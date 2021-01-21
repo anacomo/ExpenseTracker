@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Montserrat:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon-cash.png">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <title>Expense Tracker</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="title"><i class="fas fa-money-bill-wave"></i> <div id="titleappear"></div> </h1>
+    </header>
+    <section class="add">
+        <form class="add-container">
+            <div class="pair">
+                <input type="text" name="name" placeholder="Description" class="input add-description">
+                <input name="id" hidden>
+                <select name="type" class="input add-type">
+                    <option value="income">Income</option>
+                    <option value="outcome">Outcome</option>
+                </select>
+            </div>
+            <div class="pair">
+                <input type="number" step="0.01" name="value" placeholder="Enter a value" class="input add-value">
+                <!--  data-date-format="dd.mm.YYYY"-->
+                <input type="date" class="input add-date" name="date">
+                <input type="checkbox" name="check" id="check">
+                <label for="check">Today</label>
+                <button id="add_button" class="add-btn" onclick="addEntity()"><i
+                        class="far fa-check-circle"></i></i></button>
+            </div>
+            <select name="text-dimension" class="text-dimension input" onchange="setTextDimension()">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </form>
+    </section>
+    <main class="main">
+    </main>
+    <div class="modal" id="myModal">
+        <section class="modal-content">
+            <span class="close">&times;</span>
+            <form class="add-container">
+                <div class="pair">
+                    <input type="text" name="name" placeholder="Description" class="input add-description">
+                    <input name="id" hidden>
+                </div>
+                <div class="pair">
+                    <select name="type" class="input add-type">
+                        <option value="income">Income</option>
+                        <option value="outcome">Outcome</option>
+                    </select>
+                </div>
+                <div class="pair">
+                    <input type="number" step="0.01" name="value" placeholder="Enter a value" class="input add-value">
+                </div>
+                <div class="pair">
+                    <input type="date" class="input add-date" name="date">
+
+                </div>
+                <button id="edit_button" class="add-btn" onclick="editEntity()"><i
+                        class="far fa-check-circle"></i></i></button>
+            </form>
+        </section>
+    </div>
+    <div class="total">
+        <div class="total-text">Total :</div>
+        <div id="total-value"></div>
+    </div>
+        <div class="ravas">
+            <i class="fas fa-cookie-bite"></i>
+            <div class="ravas-cuvant">Fortune cookie: </div>
+            <div id="ravas-text">You will take all the exams!</div>
+        </div>
+    
+    <footer class="footer">
+        
+        <div class="text">Made with <i class="fas fa-heart"></i> for
+        </div>
+        <div id="changeName" class="text">
+            you
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
